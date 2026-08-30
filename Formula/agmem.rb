@@ -1,19 +1,19 @@
 class Agmem < Formula
   desc "agmem: agent memory over MCP. The `agmem` binary."
   homepage "https://github.com/AlfoldiMate/agmem"
-  version "0.1.1"
+  version "0.1.2"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/AlfoldiMate/agmem/releases/download/v0.1.1/agmem-server-aarch64-apple-darwin.tar.xz"
-    sha256 "bb7716f6a0fbbc670a34e18dc433e8a9745216d07096644aa564c9340fea541a"
+    url "https://github.com/AlfoldiMate/agmem/releases/download/v0.1.2/agmem-server-aarch64-apple-darwin.tar.xz"
+    sha256 "4383df75914f61dfc6a1bc8b3a9f4d69a0a4075c024a96c4b22c6d6727df5c12"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/AlfoldiMate/agmem/releases/download/v0.1.1/agmem-server-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "13f985d2c9e633860d7c2e9bef9bfea280bc58b913e0b80567a5e69d8afdf7dc"
+      url "https://github.com/AlfoldiMate/agmem/releases/download/v0.1.2/agmem-server-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "39bf9c71d2c4c893ebade1b16e27befc77ba861c1682353840a46563f8eb1da5"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/AlfoldiMate/agmem/releases/download/v0.1.1/agmem-server-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "f3cd648ac74cc219c1d9292ce85b5f4de7eb2dff1519c68df135125d533d98a3"
+      url "https://github.com/AlfoldiMate/agmem/releases/download/v0.1.2/agmem-server-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "454550c42a745d1d0cf3e5d22d1783418ea0293d0f2a4fd340f05917f69c7f6f"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
