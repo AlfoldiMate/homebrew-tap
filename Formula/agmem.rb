@@ -2,11 +2,9 @@ class Agmem < Formula
   desc "agmem: agent memory over MCP. The `agmem` binary."
   homepage "https://github.com/AlfoldiMate/agmem"
   version "0.1.1"
-  if OS.mac?
-    if Hardware::CPU.arm?
-      url "https://github.com/AlfoldiMate/agmem/releases/download/v0.1.1/agmem-server-aarch64-apple-darwin.tar.xz"
-      sha256 "bb7716f6a0fbbc670a34e18dc433e8a9745216d07096644aa564c9340fea541a"
-    end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/AlfoldiMate/agmem/releases/download/v0.1.1/agmem-server-aarch64-apple-darwin.tar.xz"
+    sha256 "bb7716f6a0fbbc670a34e18dc433e8a9745216d07096644aa564c9340fea541a"
   end
   if OS.linux?
     if Hardware::CPU.arm?
@@ -21,10 +19,10 @@ class Agmem < Formula
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-unknown-linux-gnu": {}
-  }
+    "x86_64-unknown-linux-gnu":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
